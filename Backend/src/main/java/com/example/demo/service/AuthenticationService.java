@@ -58,6 +58,37 @@ public class AuthenticationService {
         }
     }
 
+    public void verifyResetCode(VerifyUserDto dto) {
+    Optional<User> optionalUser = userRepository.findByEmail(dto.getEmail());
+    if (optionalUser.isPresent()) {
+        User user = optionalUser.get();
+        if (user.getVerificationCodeExpiresAt().isBefore(LocalDateTime.now())) {
+            throw new RuntimeException("Code expired");
+        }
+        if (!user.getVerificationCode().equals(dto.getVerificationCode())) {
+            throw new RuntimeException("Invalid code");
+        }
+        // Valid, proceed
+    } else {
+        throw new RuntimeException("User not found");
+    }
+}
+
+
+    public void sendResetCode(String email) {
+        Optional<User> optionalUser = userRepository.findByEmail(email);
+        if (optionalUser.isPresent()) {
+            User user = optionalUser.get();
+            user.setVerificationCode(generateVerificationCode());
+            user.setVerificationCodeExpiresAt(LocalDateTime.now().plusMinutes(15));
+            userRepository.save(user);
+            sendVerificationEmail(user);
+        } else {
+            throw new RuntimeException("User with this email not found");
+        }
+    }
+
+
 
     public User authenticate(LoginUserDto input) {
         User user = userRepository.findByEmail(input.getEmail())

@@ -1,13 +1,13 @@
+import React from "react";
 import Navbar2 from "./components/Navbar2";
-import Schedule from "./pages/schedule";
-
-function schedule(){
-  return(
-    <>
-    <Navbar2/>
-    <Schedule/>
-    </>
-  )
-}
+import MeetingScheduler from "./pages/schedule";
+const schedule = () => {
+  return (
+    <div>
+      <Navbar2/>
+      <MeetingScheduler />
+    </div>
+  );
+};
 
 export default schedule;

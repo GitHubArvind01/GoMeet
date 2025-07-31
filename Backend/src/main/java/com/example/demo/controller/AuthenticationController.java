@@ -65,6 +65,28 @@ public class AuthenticationController {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
+
+    @PostMapping("/emailverify")
+    public ResponseEntity<?> verifyEmailAndSendCode(@RequestParam String email) {
+        try {
+            authenticationService.sendResetCode(email);
+            return ResponseEntity.ok("Verification code sent to email");
+        } catch (RuntimeException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+
+    @PostMapping("/verify-reset-code")
+    public ResponseEntity<?> verifyResetCode(@RequestBody VerifyUserDto verifyUserDto) {
+        try {
+            authenticationService.verifyResetCode(verifyUserDto);
+            return ResponseEntity.ok("Code verified successfully");
+        } catch (RuntimeException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+
+
     @PostMapping("/resend")
     public ResponseEntity<?> resendVerificationCode(@RequestParam String email) {
         try {

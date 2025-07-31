@@ -21,7 +21,7 @@ const Hero = () => {
           </button>
           </a>
           <a href="/JoinMeet">
-            <button className="cursor-pointer flex items-center gap-2 bg-gray-200 text-indigo-900 px-6 py-3 rounded-full text-base font-semibold hover:bg-gray-300 transition">
+            <button className="cursor-pointer flex items-center gap-2 bg-gray-300 text-indigo-900 px-6 py-3 rounded-full text-base font-semibold hover:bg-gray-200 transition">
             <Keyboard className="w-5 h-5" />
             Join a Meeting
           </button>
