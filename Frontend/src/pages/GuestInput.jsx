@@ -37,7 +37,7 @@ const GuestInput = ({ guests, setGuests }) => {
           >
             {email}
             <button
-              className="ml-2 text-red-500"
+              className="ml-2 text-red-500 cursor-pointer"
               onClick={() => removeGuest(index)}
             >
               ×

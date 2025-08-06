@@ -29,7 +29,7 @@ function Login() {
   };
 
   return (
-    <div className="min-h-[calc(100vh-56.5px)] flex items-center justify-center bg-gradient-to-br from-blue-100 to-purple-200 px-4">
+    <div className="h-[calc(100vh-64px)] w-full overflow-hidden flex items-center justify-center bg-gradient-to-br from-blue-100 to-purple-200 px-4">
       <div className="bg-white shadow-xl rounded-2xl p-8 w-full max-w-md">
         <h1 className="text-3xl font-extrabold text-center text-gray-800 mb-6">User Login</h1>
 
@@ -43,7 +43,7 @@ function Login() {
             disabled={loading}
           />
           <a href="/resetpass">
-            <span className="flex justify-end text-blue-500 text-sm hover:underline pb-1.5">Forgot Password?</span>
+            <span className="flex justify-end text-blue-500 cursor-pointer \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\text-sm hover:underline pb-1.5">Forgot Password?</span>
           </a>
           <input
             type="password"
@@ -63,7 +63,7 @@ function Login() {
           <button
           onClick={handleLogin}
           disabled={loading || !email || !password}
-          className={`w-full text-white py-2 rounded-lg font-medium transition duration-300 ${
+          className={`w-full text-white py-2 rounded-lg cursor-pointer font-medium transition duration-300 ${
           loading || !email || !password
           ? 'bg-gray-400 cursor-not-allowed'
           : 'bg-blue-600 hover:bg-blue-700'

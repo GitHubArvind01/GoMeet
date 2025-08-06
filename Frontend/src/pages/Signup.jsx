@@ -59,7 +59,7 @@ function Signup() {
   };
 
   return (
-    <div className="min-h-[calc(100vh-56.5px)] flex items-center justify-center bg-gradient-to-br from-blue-100 to-purple-200 px-4">
+      <div className="h-[calc(100vh-64px)] w-full overflow-hidden flex items-center justify-center bg-gradient-to-br from-blue-100 to-purple-200 px-4">
       <div className="bg-white shadow-xl rounded-2xl p-8 w-full max-w-md">
         <h1 className="text-3xl font-bold text-center text-gray-800 mb-6">
           {awaitingVerification ? 'Verify Your Email' : 'User Sign Up'}
@@ -129,7 +129,7 @@ function Signup() {
             (!email || !name || !password || !confirmPassword)) ||
             (awaitingVerification && !verificationCode)
         }
-        className={`w-full text-white py-2 rounded-lg font-medium transition duration-300 ${
+        className={`w-full cursor-pointer text-white py-2 rounded-lg font-medium transition duration-300 ${
         loading ||
         (!awaitingVerification &&
         (!email || !name || !password || !confirmPassword)) ||
