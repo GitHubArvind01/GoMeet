@@ -1,10 +1,9 @@
-
 const JoinMeeting = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-100 to-purple-200 flex items-center justify-center">
+    <div className="flex-1 h-[calc(100vh-64px)] bg-gradient-to-br from-blue-100 to-purple-200 flex items-center justify-center">
       <div className="bg-white px-8 py-10 rounded-xl shadow-md w-full max-w-md">
         <h2 className="text-2xl font-bold text-center mb-6">Join a meeting with ID</h2>
-        
+
         <div className="mb-5">
           <label className="block text-gray-700 font-semibold mb-2">Meeting ID</label>
           <input

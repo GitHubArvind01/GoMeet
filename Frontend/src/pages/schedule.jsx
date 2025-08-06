@@ -35,7 +35,7 @@ const schedule = () => {
   };
 
   return (
-    <div className=" bg-gradient-to-br from-blue-100 to-purple-200 min-h-[calc(100vh-61.5px)] p-8 relative">
+    <div className="h-[calc(100vh-64px)] w-full overflow-hidden bg-gradient-to-br from-blue-100 to-purple-200 flex items-center justify-center relative">
       <div className="bg-gray-200 rounded-lg p-6 flex justify-center min-h-130 gap-10">
         {/* Left side - Schedule Meeting */}
         <div className="flex-1">
@@ -89,7 +89,7 @@ const schedule = () => {
           </div>
 
           <div className="flex gap-4">
-            <button className=" border-none bg-blue-600 text-white px-6 py-2 rounded">
+            <button className="border-none bg-blue-600 text-white px-6 py-2 rounded">
               Save
             </button>
             <button

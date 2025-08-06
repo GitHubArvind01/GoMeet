@@ -1,8 +1,6 @@
-
-
 const Navbar2 = () => {
   return (
-    <nav className="flex items-center justify-between px-6 py-3 bg-white-100 shadow-sm">
+    <nav className="h-16 flex items-center justify-between px-6 bg-white shadow-sm">
       <div className="flex items-center gap-2 text-xl font-semibold">
         <img
           src="./src/assets/icon 2.png"

@@ -3,10 +3,10 @@ import Hero from "./pages/hero";
 
 function App(){
   return(
-    <>
-    <Navbar/>
-    <Hero/>
-    </>
+    <div className="flex flex-col h-screen overflow-hidden">
+      <Navbar />
+      <Hero />
+    </div>
   )
 }
 

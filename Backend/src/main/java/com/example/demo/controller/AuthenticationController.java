@@ -12,6 +12,9 @@ import java.util.Map;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @CrossOrigin(origins = "http://localhost:5173")
 @RequestMapping("/auth")
@@ -75,7 +78,11 @@ public class AuthenticationController {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
-
+    @GetMapping("/userprofile")
+    public String getMethodName(@RequestParam String param) {
+        return "welcome to the userprofile";
+    }
+    
     @PostMapping("/verify-reset-code")
     public ResponseEntity<?> verifyResetCode(@RequestBody VerifyUserDto verifyUserDto) {
         try {
