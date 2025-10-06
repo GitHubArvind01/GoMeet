@@ -9,7 +9,7 @@ A secure full-stack interview scheduling app with JWT authentication, meeting ro
 - ✅ Join Interview Room via ID + Passkey
 - ✅ Anti-Cheat (Tab switch + Copy/Paste Block)
 - ✅ Modern UI with TailwindCSS + Vite
-- ✅ JavaMail integration
+- ✅ Mail integration
 - ⏳ Coming Soon: Face Detection + Logs
 
 ## 📸 Screenshots
@@ -24,9 +24,9 @@ A secure full-stack interview scheduling app with JWT authentication, meeting ro
 ## 🧰 Tech Stack
 
 **Frontend**: React + Vite + TailwindCSS  
-**Backend**: Java + Spring Boot + JWT  
-**Database**: MySQL  
-**Others**: JavaMail, Maven
+**Backend**: Node js + Expres js + JWT  
+**Database**: MongoDB
+**Others**: Nodemailer
 
 ---
 
@@ -36,18 +36,19 @@ A secure full-stack interview scheduling app with JWT authentication, meeting ro
 
 Make sure these are installed and added to your PATH:
 
-- Node.js
-- Maven
-- JDK 17+
-- MySQL
+- node -v
+- npm -v
+- mongod --version
+- git -v
+
 
 ### 📦 Setup Steps 1
 
 #### 🔧 Backend (Spring Boot)
 
 ```bash
-cd backend
-mvn spring-boot:run
+cd server
+nodemon server.js
 
 ```
 
@@ -56,6 +57,6 @@ mvn spring-boot:run
 #### 🔧 Frontend (React + Vite)
 
 ```bash
-cd frontend
+cd client
 npm install
 npm run dev
