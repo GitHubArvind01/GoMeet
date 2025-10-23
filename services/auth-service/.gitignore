@@ -7,18 +7,50 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+# Dependencies
+node_modules/
+bower_components/
+
+# Build outputs
+dist/
+dist-ssr/
+build/
+out/
+
+# Local env files
+.env
+.env.local
+.env.*.local
 *.local
 
 # Editor directories and files
-.vscode/*
+.vscode/
 !.vscode/extensions.json
-.idea
+.idea/
 .DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# OS files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+*.pid
+
+# Coverage reports
+coverage/
+*.lcov
+
+# Misc
+yarn-error.log
+package-lock.json
+.pnpm-debug.log
