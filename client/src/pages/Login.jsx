@@ -108,6 +108,7 @@ function Login() {
         if (typeof setIsAuthenticated === 'function') {
           setIsAuthenticated(true); 
         }
+        localStorage.setItem('userName', response.name);
         // SUCCESS CASE: Logged in and Verified
         setMessage('✅ Login successful! Redirecting...');
         setTimeout(() => (window.location.href = '/'), 1000);

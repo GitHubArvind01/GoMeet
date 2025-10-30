@@ -17,6 +17,8 @@ export const createMeeting = async (req, res) => {
   try {
     const { title, details, fromDate, fromTime, toDate, toTime, guests } = req.body;
 
+    const userId = req.user.id;
+
     // here unique meeting ID
     const meetingId = uuidv4();
 
@@ -26,6 +28,7 @@ export const createMeeting = async (req, res) => {
 
 
     const newMeeting = new Meeting({
+      userId,
       title,
       details,
       startTime: `${fromDate}T${fromTime}`,
@@ -147,6 +150,19 @@ export const createMeeting = async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Internal server error" });
+  }
+};
+
+
+// we can show them in their profile page to schedule meetings
+export const getUserMeetings = async (req, res) => {
+  try {
+    const userId = req.user.id;
+    const meetings = await Meeting.find({ userId }).sort({ startTime: -1 });
+    res.status(200).json({ success: true, meetings });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ success: false, message: "Failed to fetch meetings" });
   }
 };
 

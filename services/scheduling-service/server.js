@@ -2,14 +2,21 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
+import cookieParser from "cookie-parser";
 import meetingRoutes from "./routes/meetingRoutes.js";
 
 dotenv.config();
 const app = express();
 
-app.use(cors());
+const allowedOrigins = [
+  "http://localhost:5173",
+  "http://localhost:5174",
+];
+
 app.use(express.json());
-app.use("/meeting", meetingRoutes);
+app.use(cookieParser());
+app.use(cors({ origin: allowedOrigins, credentials: true }));
+
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
