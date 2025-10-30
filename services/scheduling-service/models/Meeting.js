@@ -7,7 +7,8 @@ const meetingSchema = new mongoose.Schema({
   meetingId: { type: String, required: true },
   joinLink: { type: String, required: true },
   endTime: { type: String, required: true },
-  guests: [{ type: String }], // list of guest emails or names
+  guests: [{ type: String }],
+  passcode: { type: String, required: true },
 }, { timestamps: true });
 
 export default mongoose.model("Meeting", meetingSchema);
